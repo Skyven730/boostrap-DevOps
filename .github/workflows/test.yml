@@ -13,5 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name : Setup node.js
+      - name: Setup node.js
         uses: sections/checkout@v6
+        with:
+          node-version: 16.13.x
+          cache: npm
+      - name: Install
+        run: npm ci
